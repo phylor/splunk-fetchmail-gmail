@@ -22,11 +22,14 @@ VERBOSE=on
 /home/splunk/Mail
 EOF
 
-chmod 0600 /etc/fetchmailrc
-chown splunk:splunk /etc/fetchmailrc
+cp /etc/fetchmailrc /etc/fetchmailrc-force-grab
+echo '  fetchall' >> /etc/fetchmailrc-force-grab
+
+chmod 0600 /etc/fetchmailrc*
+chown splunk:splunk /etc/fetchmailrc*
 
 # Start fetchmail daemon
-su splunk -c 'fetchmail -d 300 -f /etc/fetchmailrc'
+/fetch_mails.sh &
 
 # Start splunk
 /sbin/entrypoint.sh start-service
