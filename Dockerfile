@@ -1,6 +1,6 @@
 FROM splunk/splunk
 
-ENV SPLUNK_START_ARGS "--accept-license"
+ENV SPLUNK_START_ARGS "--accept-license --answer-yes --no-prompt"
 
 RUN apt update && apt install -y fetchmail procmail
 
