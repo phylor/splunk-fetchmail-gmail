@@ -30,6 +30,8 @@ chown splunk:splunk /etc/fetchmailrc*
 
 chown splunk:splunk /home/splunk/Mail
 
+cp /{inputs,props,transforms}.conf /opt/splunk/etc/system/local/
+
 # Start fetchmail daemon
 /fetch_mails.sh &
 

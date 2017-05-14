@@ -15,5 +15,9 @@ COPY inputs.conf /opt/splunk/etc/system/local/
 COPY props.conf /opt/splunk/etc/system/local/
 COPY transforms.conf /opt/splunk/etc/system/local/
 
+COPY inputs.conf /
+COPY props.conf /
+COPY transforms.conf /
+
 CMD /entrypoint.sh
 

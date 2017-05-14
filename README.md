@@ -15,6 +15,12 @@ Use `-e FETCHMAIL_FORCE_GRAB=y` as an additional option to make the container fi
         -p 40000:8000 \
         phylor/splunk-fetchmail-gmail
 
+Splunk configuration and data, and fetched emails can be persisted on the host. Use the following options:
+
+    -v /on_host/splunk/etc:/opt/splunk/etc \
+    -v /on_host/splunk/var:/opt/splunk/var \
+    -v /on_host/splunk/mail:/home/splunk/Mail
+
 ## Systemd Example Unit
 
     [Unit]
