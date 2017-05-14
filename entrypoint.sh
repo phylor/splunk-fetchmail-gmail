@@ -28,6 +28,8 @@ echo '  fetchall' >> /etc/fetchmailrc-force-grab
 chmod 0600 /etc/fetchmailrc*
 chown splunk:splunk /etc/fetchmailrc*
 
+chown splunk:splunk /home/splunk/Mail
+
 # Start fetchmail daemon
 /fetch_mails.sh &
 
